@@ -4,4 +4,5 @@ help: ## Display this help.
 
 ##@ Test
 test-coverage: ## Generate coverage report
-	@go test -race -coverpkg=./base62/... $(shell go list ./... | grep -v "/example/") -coverprofile=coverage.txt
+	@go test -race -coverpkg=./base62/... $(shell go list ./... | grep -v "/example/") -coverprofile=base62.txt
+	@go test -race -coverpkg=./valctx/... $(shell go list ./... | grep -v "/example/") -coverprofile=valctx.txt

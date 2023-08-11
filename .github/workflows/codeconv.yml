@@ -11,7 +11,17 @@ jobs:
       - uses: actions/checkout@v3
       - name: "Generate coverage report"
         run: make test-coverage
-      - name: Upload coverage reports to Codecov
+      - name: Upload coverage reports base62 to Codecov
         uses: codecov/codecov-action@v3
+        with:
+          files: ./base62.txt
+          flags: base62
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      - name: Upload coverage reports valctx to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./valctx.txt
+          flags: valctx
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
