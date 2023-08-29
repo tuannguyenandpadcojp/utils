@@ -11,16 +11,11 @@ coverage:
       only_pulls: true
     project:
       default: off
-      remote:
+      valctx:
         target: auto
         threshold: 1%
         flags:
           - valctx
-      # remote-bff:
-      #   target: auto
-      #   threshold: 1%
-      #   flags:
-      #     - remote-bff
     patch: off
 
 comment:
